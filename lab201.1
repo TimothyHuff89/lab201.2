@@ -1,0 +1,45 @@
+//Timothy Huff
+//Lab201R 0001
+//8-28-2024
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  // There is a logic error in this program.
+  // Correct this error, test your changes, and commit the changes
+  int guess = 0, solution = 15;
+  char answer = 'y';
+  cout << "Would you like to play? "; //corrected 222 to to
+  cin >> answer;
+  answer = tolower(answer);
+  while (answer != 'n') { //added loop to correct invalid inputs
+    if (answer != 'y') {
+    cout << "Invalid choice. Enter 'y' or 'n': ";
+  }
+    cin >> answer;
+    answer = tolower(answer); // corrected for uppercase
+    if (answer == 'y' | answer == 'n') {
+        while (answer == 'y') {
+          cout << "Enter your guess between 0 & 50: ";
+          cin >> guess;
+          while (guess != solution) { //created loop for guessing
+            if (guess > solution) {
+              cout << "sorry - your guess is too big\n";
+            } else if (guess < solution) {
+              cout << "sorry - your guess is too low\n";
+            } else if (guess == solution){
+            } else
+            cout << "invalid input. guess again\n";
+            cin >> guess;
+          }
+          cout << "You got it!\n"; //added statement for winning
+          cout << "Guess again? "; {
+          cin >> answer;
+          answer = tolower(answer);// changed character to account for upper case
+        }
+
+    }
+  }
+}
+}
