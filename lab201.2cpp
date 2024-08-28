@@ -1,0 +1,52 @@
+//Timothy Huff
+//08-28-2024
+//lab 201 0001
+//get 2 values
+//calc distance to origin and print
+//repeat
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() { 
+  //define values
+  int x1, y1, w1, u1;
+  float dist1;
+  float dist2;
+  char userChoice = 'Y';
+  char userChoice2 = 'Y';
+  srand(time(0));
+
+  while (userChoice == 'Y'){
+    /*
+    cout << "Please enter x and y coordinates (int): ";
+    cin >> x1 >> y1;  //verify input
+    */
+    cout <<"Do you want to enter your own numbers? Y or N";
+    cin >> userChoice2;
+    userChoice2 = toupper(userChoice2);
+    x1 = rand()%21;
+    y1 = rand()%21;
+    w1 = rand()%21;
+    u1 = rand()%21;
+      //distance formula
+    dist1 = pow(pow(x1,2) + pow(y1,2),.5); //= distance;
+    cout << "Distance to origin for point: ("
+      <<x1 << "," << y1 <<") is: " 
+      << dist1 << endl;
+
+    dist2 = pow(pow(w1,2) + pow(u1,2),.5); //= distance;
+    cout << "Distance to origin for point: ("
+      <<w1 << "," << u1 <<") is: " 
+      << dist2 << endl;
+
+    
+
+    
+    cout << "Go again? Y or N: ";
+    cin >> userChoice;
+    userChoice = toupper(userChoice);
+  }
+  
+
+}
